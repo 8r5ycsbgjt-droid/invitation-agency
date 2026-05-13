@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@layer utilities {
+  /* Font families */
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .font-vibes {
+    font-family: 'Great Vibes', cursive;
+  }
+  .font-playfair {
+    font-family: 'Playfair Display', serif;
+  }
+  .font-sans {
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Custom Glows */
+  .gold-glow {
+    box-shadow: 0 0 40px rgba(200, 169, 106, 0.15);
+  }
+  .gold-glow-strong {
+    box-shadow: 0 0 60px rgba(200, 169, 106, 0.3);
+  }
+  .gold-glow-text {
+    text-shadow: 0 0 20px rgba(200, 169, 106, 0.4);
+  }
+  
+  /* Glassmorphism */
+  .luxury-glass {
+    background: rgba(43, 38, 32, 0.65);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(200, 169, 106, 0.2);
+  }
+  .luxury-glass-light {
+    background: rgba(246, 241, 232, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(200, 169, 106, 0.15);
+  }
+}
+
+/* Custom Keyframe animations */
+@keyframes slowDrift {
+  0% { transform: translateY(0px) scale(1); opacity: 0.05; }
+  50% { transform: translateY(-15px) scale(1.03); opacity: 0.08; }
+  100% { transform: translateY(0px) scale(1); opacity: 0.05; }
+}
+
+@keyframes floatEmoji {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(4deg); }
+}
+
+@keyframes shimmerPulse {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.25; }
+}
+
+@keyframes fadeUpReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes inkReveal {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleInCard {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-slow-drift {
+  animation: slowDrift 12s ease-in-out infinite;
+}
+
+.animate-float-1 {
+  animation: floatEmoji 6s ease-in-out infinite;
+}
+
+.animate-float-2 {
+  animation: floatEmoji 8s ease-in-out infinite 1s;
+}
+
+.animate-float-3 {
+  animation: floatEmoji 7s ease-in-out infinite 2s;
+}
+
+.animate-shimmer {
+  animation: shimmerPulse 4s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeUpReveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-ink-reveal {
+  animation: inkReveal 1.5s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleInCard 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hide Scrollbar but Keep Functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
